@@ -6,7 +6,7 @@ BEGIN {
 
 function print_all(     i){
     i = deque::left
-    printf "%s\n[%s]\n[%s]\n\n", deque::stack[i+1], deque::stack[i], deque::stack[i+1]
+    printf "%s\n[%s]\n[%s]\n\n", deque::stack[i+1], deque::stack[i], deque::stack[i+2]
 }
 
 {
