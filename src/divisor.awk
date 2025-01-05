@@ -27,13 +27,11 @@ function divisor(n,    divisors, i, j, another_i) {
 }
 
 function _log(msg,    stderr) {
-    stderr = "/dev/stderr"
-    print "debug:", msg >> stderr
+    logging::_log(msg)
 }
 
 function error_log(msg,    stderr) {
-    stderr = "/dev/stderr"
-    print "error:", msg >> stderr
+    logging::_log(msg)
 }
 
 function is_number(input) {

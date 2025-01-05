@@ -1,28 +1,43 @@
 # AWKの習作
 
+AWK the programming language
+
+
 ## 大量の整数を出力するやつ
 
+```sh
 ./anybloat.awk n
+```
 
-n 個ランダムな数を出力します
+`n` 個ランダムな数を出力します
 
 
 ## 約数を計算するやつ（入力に柔軟に対応！）
 
-./divisor.awk
+`logging.awk` をログ用ライブラリとして使用します
 
+```sh
+./divisor.awk -f logging.awk
 ```
-$ seq 9 12 | ./divisor.awk
+
+```sh
+seq 9 12 | ./divisor.awk -f logging.awk
 9: 1 3 9
 10: 1 2 5 10
 11: 1 11
 12: 1 2 3 4 6 12
+```
 
-$ ./divisor.awk 12 21  # 承久の乱
+```
+# 承久の乱
+./divisor.awk -f logging.awk 12 21
 12: 1 2 3 4 6 12
 21: 1 3 7 21
+```
 
-$ ./divisor.awk 31 - 12  # 途中で - が来ると入力を促します
+```
+# 途中で - が来ると入力を促します
+./divisor.awk -f logging.awk 31 - 12
 31: 1 31
 64
 64: 1 2 4 8 16 32 64
