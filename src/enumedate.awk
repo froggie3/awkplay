@@ -1,7 +1,8 @@
 #!/usr/bin/awk -f
 
 BEGIN {
-    "date +'%Y'" | getline year
+    base_time = mktime(strftime("%Y") " 01 01 00 00 00 [JST]")
+    day_seconds = 86400
 }
 
 function print_all(     i){
@@ -10,8 +11,7 @@ function print_all(     i){
 }
 
 {
-    sprintf("date --date='%d0101 %+d day' +%%F", year, $1) | getline line
-    deque::push(line)
+    deque::push(strftime("%Y%m%d", day_seconds * $1 + base_time))
     if (deque::count() >= 3) {
         print_all()
         deque::popleft()
