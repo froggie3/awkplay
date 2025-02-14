@@ -58,7 +58,7 @@ Cosense の日記用に作ったプログラムです。
 任意のフォーマットには対応していないので使うなら改造が必要でしょう。
 
 ```sh
-seq -1 365 | ./enumedate.awk -f logging.awk -f deque.awk
+seq -1 365 | ./enumedate.awk -f deque.awk
 20250101
 [20241231]
 [20250102]
